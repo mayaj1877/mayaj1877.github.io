@@ -23,7 +23,7 @@
         }
 
         .image-row img {
-            width: 300px; 
+            width: 340px; 
             height: 300px; 
         }
 
@@ -37,7 +37,7 @@
 <body>
     
     <h1>Project 1: Images of the Russian Empire: Colorizing the Prokudin-Gorskii Photo Collection </h1>
-    <h2> by Maya Joiner </h2>
+    <h3> by Maya Joiner </h3>
     <p>In this project, I attempt to create a single color image by aligning 3 Prokudin-Gorskii glass plate images (each representing the red, green, and blue color channels). The data is one long image/matrix that I cut into 3 parts and label r, g, and b. In order to align the three channels together, I use the exaustive aligning method for small .jpg images and the image pyramid method for large .tif files to align the red and green channel onto the blue channel (more explanation on the methods below).
 </p>
 
@@ -48,9 +48,9 @@
     <h2> Image Pyramid </h2>
     <p> For larger files ending in .tif, I used the image pyramid method. Upon researching about the image pyramid method (sources at end), these were my findings (sources below): 
     <ol style="list-style-type: decimal;">
-    <li> make image smaller by half every time (multiply by 0.5 recursively for 4 levels) </li>
-    <li> align smallest image (top of the pyramid) </li>
-    <li> upsample by 2x and do step 2 again using the upsampled shift. The upsampled image will be same size as original image but lower res </li>
+    <li> Make image smaller by half every time (multiply by 0.5 recursively for 4 levels) </li>
+    <li> Align smallest image (top of the pyramid) </li>
+    <li> Upsample by 2x and do step 2 again using the upsampled shift. The upsampled image will be same size as original image but lower res </li>
     </ol>
 
     Conceptually, as the photos get very large, it is computationally expensive to use the exaustive approach (since it uses a double for loop). The image pyramid method mitigates that by making the photos smaller and of a lower resolution (i.e. condensing the original but keeping only the essential information of the original photo when doing so) when calling the exaustive align function. To recursively move down the pyramid (i.e. account for larger versions of the photo), I upsampled the x and y alignment of the small image (i.e. multiplied by 2) because theoretically, if the size of the image doubles, the shift also doubles. The total shift is just the original shift + shift for each scale/level of the pyramid. According to the Stanford pdf (again, sources below), the pyramid should have no more than 4 levels because having more than 4 levels would make the top layer too small.
