@@ -63,66 +63,6 @@
     <li> section 3.5 of the Szeliski textbook </li>
     </p>
 
-    <h2> Offsets </h2>
-    <p>
-        
-    <li> Cathedral (l2): </li>
-        <li> red: (7, -1)</li>
-        <li> green: (1, -1) </li>
-
-    <li> Monsatery (cropped): </li>
-        - red: (3, 2)
-        - green: (-3, 2)
-
-Tobolsk (l2, cropped):
-- red: (6, 3)
-- green: (3, 3)
-
-Church:
-- red: (52, -6)
-- green: (0, -5)
-
-Emir (unscaled):
-- red: (57, 17)
-- green: (-3, 7)
-
-Harvesters (cropped):
-- red: (124, 13)
-- green: (59, 16)
-
-Icon:
-- red: (52, 21)
-- green: (36, 16)
-
-Lady (cropped):
-- red: (112, 11)
-- green: (51, 8)
-
-Melons:
-- red: (176, 7)
-- green: (83, 4)
-
-Onion Church:
-- red: (108, 35)
-- green: (52, 22)
-
-Sculpture:
-- red: (140, -26)
-- green: (33, -11)
-
-Self-Portrait:
-- red: (130, -5)
-- green: (50, -2)
-
-Three-Generations (cropped):
-- red: (108, 7)
-- green: (52, 5)
-
-Train (cropped):
-- red: (87, 32)
-- green: (42, 5)
-
-        
     </p>
     <p class="center-text">
     <b> Cathedral </b>
@@ -134,7 +74,10 @@ Train (cropped):
     <figure>
     <p> left: result using L2 norm. right: result using NCC. <b> Offset: </b> red: (7, -1), green: (1, -1). </p>
     </figure>
-    
+
+    <p class="center-text">
+    <b> Monastery </b>
+    </p>
     <div class="image-row">
     <p><img src="media/out_monastery_l2_norm.jpg" /></p>
     <p><img src="media/out_monastery_ncc.jpg" /></p>
@@ -143,6 +86,9 @@ Train (cropped):
     <p> left: result using L2 norm. right: result using NCC.</p>
     </figure>
 
+    <p class="center-text">
+    <b> Tobolsk </b>
+    </p>
     <div class="image-row">
     <p><img src="media/out_tobolsk_cropped_l2_norm.jpg" /></p>
     <p><img src="media/out_tobolsk_cropped_ncc.jpg" /></p>
@@ -152,6 +98,123 @@ Train (cropped):
     <figure>
     <p> From left to right: cropped L2 norm, cropped NCC, uncropped L2 norm, uncropped NCC. </p>
     </figure>
+
+    <p class="center-text">
+    <b> Church </b>
+    </p>
+    <div class="image-row">
+    <p><img src="media/out_church_l2_norm.jpg" /></p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (52, -6), green: (0, -5) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Emir </b>
+    </p>
+    <div class="image-row">
+    <p><img src="media/out_emir_non_upscale_l2_norm.jpg" /></p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (57, 17), green: (-3, 7) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Harvesters </b>
+    </p>
+    <div class="image-row">
+    <p><img src="out_harvesters_cropped_l2_norm.jpg" /></p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (124, 13), green: (59, 16) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Icon </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_icon_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (52, 21), green: (36, 16) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Lady </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_lady_cropped_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (112, 11), green: (51, 8) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Melons </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_melons_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (176, 7), green: (83, 4) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Onion Church </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_onion_church_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (108, 35), green: (52, 22) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Sculpture </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_sculpture_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (140, -26), green: (33, -11) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Self Portrait </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_self_portrait_cropped_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (130, -5), green: (50, -2) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Three Generations </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_three_generations_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (108, 7), green: (52, 5) </p>
+    </figure>
+
+    <p class="center-text">
+    <b> Train </b>
+    </p>
+    <div class="image-row">
+    <p> <img src="out_train_cropped_l2_norm.jpg"/> </p>
+    </div>
+    <figure>
+    <p> <b> Offset: </b> red: (87, 32), green: (42, 5) </p>
+    </figure>
+
+    
+
+    
+    
+
+    
 
 </body>
 </html>
