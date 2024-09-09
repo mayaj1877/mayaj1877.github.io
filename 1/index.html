@@ -5,13 +5,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 20px;
+            padding: 20px;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px;
             padding: 20px;
             text-align: center;
         }
@@ -24,8 +24,14 @@
     <p>In this project, I attempt to create a single color image by aligning 3 Prokudin-Gorskii glass plate images (each representing the red, green, and blue color channels). The data is one long image/matrix that I cut into 3 parts and label r, g, and b. In order to align the three channels together, I use the exaustive aligning method for small .jpg images and the image pyramid method for large .tif files to align the red and green channel onto the blue channel (more explanation on the methods below).
 </p>
 
-    <h1> Exaustive Search </h1>
+    <h2> Exaustive Search </h2>
+    <p> For cathedral.jpg and monastery.jpg, I used the exaustive search approach because these photos were smaller than the others. I searched the best shift of the red and green channels compared to the blue channel out of a -15 to 15 window of possible displacements. To decide which shift was the "best" shift, I tried using both the Euclidian method (L2 norm) and NCC (Normalized Cross Correlation). More specifically, I chose whichever shift either minimized the L2 norm or maximized NCC. However, for both the cathedral and monastery, taking the L2 norm seemed to work better. Once I got the best shift, I used those values to shift the channels by that much using the np.roll function. <p>
+    <p> For monastery.jpg, even the L2 norm version seemed to be a bit off (which I figured was because of the border around the photos). Therefore, I used only a 300x300 subset of the image instead of the entire 341x391 image. To do this, I got the x and y center coordinates of the image and added/subtracted 150 to the x and y coordinates to get the x and y bounds. Taking out the border helped make the image more clear. </p>
+
+    <p><img src="media/out_cathedral_l2_norm.jpg" /></p>
+    <p><img src="media/out_cathedral_ncc.jpg" /></p>
     <p><img src="media/out_monastery_l2_norm.jpg" /></p>
+    <p><img src="media/out_monastery_ncc.jpg" /></p>
 
 </body>
 </html>
