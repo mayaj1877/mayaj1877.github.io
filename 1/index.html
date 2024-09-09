@@ -40,7 +40,14 @@
     <p> For monastery.jpg and tobolsk.jpg, even the L2 norm version seemed to be a bit off (which I figured was because of the border around the photos). Therefore, I used only a 300x300 subset of the image instead of the entire 341x391 image. To do this, I got the x and y center coordinates of the image and added/subtracted 150 to the x and y coordinates to get the x and y bounds. Taking out the border helped make the image more clear. </p>
 
     <h2> Image Pyramid </h2>
-    <p> For larger files ending in .tif, I used the image pyramid method. </p>
+    <p> For larger files ending in .tif, I used the image pyramid method. Upon researching about the image pyramid method, these were my findings (sources below): 
+    <ol style="list-style-type: decimal;">
+    <li> 1. make image smaller by 0.5 (up to 4 levels) </li>
+    <li> 2. align smallest image </li>
+    <li> 3. upsample by 2x and do step 2 again. the upsampled image will be same size as original image but lower res </li>
+    </ol>
+    
+    </p>
 
     <h2> Source </h2>
     <p> 
