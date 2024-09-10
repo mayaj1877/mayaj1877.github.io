@@ -59,18 +59,16 @@ d<!DOCTYPE html>
 
     Conceptually, as the photos get very large, it is computationally expensive to use the exaustive approach (since it uses a double for loop). The image pyramid method mitigates that by making the photos smaller and of a lower resolution (i.e. condensing the original but keeping only the essential information of the original photo when doing so) when calling the exaustive align function. To recursively move down the pyramid (i.e. account for larger versions of the photo), I upsampled the x and y alignment of the small image (i.e. multiplied by 2) because theoretically, if the size of the image doubles, the shift also doubles. The total shift is just the original shift + shift for each scale/level of the pyramid. According to the Stanford pdf (again, sources below), the pyramid should have no more than 4 levels because having more than 4 levels would make the top layer too small.
 
-    Similar to the exaustive search, some images had a problem where the border screwed up the alignments, so I cropped the border of the image. This time the .tif images were larger (~3200 x ~3650), so I cropped the image to about (~2550, ~2850) using the same approach as the 300x300 case. Although this improved aligment for a majority of the images that didn't turn out well without the crop, the only one that was still a bit stretched was emir.tif (especially for the red channel). However, when I got rid of the upsampling portion (i.e. didn't multiply the scales by 2), emir.tif became very aligned. I'm not sure why not upsampling makes emir.tif better.
+    Similar to the exaustive search, some images had a problem where the border screwed up the alignments, so I cropped the border of the image. This time the .tif images were larger (~3200 x ~3650), so I cropped the image to about (~2550, ~2850) using the same approach as the 300x300 case. Although this improved aligment for a majority of the images that didn't turn out well without the crop, the only one that was still a bit stretched was emir.tif (especially for the red channel). However, when I got rid of the upsampling portion (i.e. didn't multiply the scales by 2), emir.tif became very aligned. I'm not sure why not upsampling makes emir.tif better, but I figure it has something to do with the initial shifts at the smallest level not being accurate enough (magnifying a bad initial shift will only make the shift worse).
     
     </p>
-
-    
     <h2> Sources </h2>
     <p> 
     <li> https://youtu.be/Q372k8Xg_ds </li>
+    <li> section 3.5 of the Szeliski textbook </li>
     <li> http://robots.stanford.edu/cs223b04/algo_tracking.pdf </li>
     <li> https://www.youtube.com/watch?v=ZAtt4M6JAug </li>
     <li> https://youtu.be/pdBeqMGdGiU </li>
-    <li> section 3.5 of the Szeliski textbook </li>
     </p>
 
     </p>
