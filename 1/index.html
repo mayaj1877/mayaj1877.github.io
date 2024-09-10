@@ -59,7 +59,7 @@
     <ol style="list-style-type: decimal;">
     <li> Make image smaller by half every time (multiply by 0.5 recursively for 4 levels) </li>
     <li> Align smallest image (top of the pyramid) </li>
-    <li> Upsample by 2x and do step 2 again using the upsampled shift. The upsampled image will be same size as original image but lower res </li>
+    <li> Upsample by 2x and align the image using the upsampled shift. The upsampled image will be same size as original image but lower res </li>
     </ol>
 
     Conceptually, as the photos get very large, it is computationally expensive to use the exaustive approach (since it uses a double for loop). The image pyramid method mitigates that by making the photos smaller and of a lower resolution (i.e. condensing the original but keeping only the essential information of the original photo when doing so) when calling the exaustive align function. To recursively move down the pyramid (i.e. account for larger versions of the photo), I upsampled the x and y alignment of the small image (i.e. multiplied by 2) because theoretically, if the size of the image doubles, the shift also doubles. According to the Stanford pdf (again, sources below), the pyramid should have no more than 4 levels because having more than 4 levels would make the top layer too small. Then I calculated the total shift, which is just the original shift + shift for each scale/level of the pyramid. 
