@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+d<!DOCTYPE html>
 <html>
 <head>
     <title> Project 1: Images of the Russian Empire: Colorizing the Prokudin-Gorskii Photo Collection </title>
@@ -30,7 +30,7 @@
         figure {
             text-align: center; /* Centers the caption and image */
         }
-
+ 
         .center-text {
             text-align: center; /* Centers the text */
         }
@@ -75,18 +75,18 @@
 
     </p>
     <p class="center-text">
-    <b> Cathedral </b>
+    <b> Cathedral (Example of L2 vs. NCC) </b>
     </p>
     <div class="image-row">
     <p><img src="media/out_cathedral_l2_norm.jpg" /></p>
     <p><img src="media/out_cathedral_ncc.jpg" /></p>
     </div>
     <figure>
-    <p> left: result using L2 norm. right: result using NCC. <b> Offset: </b> red: (7, -1), green: (1, -1). </p>
+    <p> left: result using L2 norm. right: result using NCC. Used L2 Norm. <b> Offset: </b> red: (7, -1), green: (1, -1). </p>
     </figure>
 
     <p class="center-text">
-    <b> Monastery </b>
+    <b> Monastery (Example of Cropping and L2 vs. NCC) </b>
     </p>
     <div class="image-row">
     <p><img src="media/out_monastery_cropped_l2_norm.jpg" /></p>
@@ -95,7 +95,7 @@
     <p><img src="media/out_monastery_ncc.jpg" /></p>
     </div>
     <figure>
-    <p> From left to right: cropped L2 norm, cropped NCC, uncropped L2 norm, uncropped NCC. <b> Offset: </b> red: (3, 2), green: (-3, 2) </p>
+    <p> From left to right: cropped L2 norm, cropped NCC, uncropped L2 norm, uncropped NCC. Used cropped L2. <b> Offset: </b> red: (3, 2), green: (-3, 2) </p>
     </figure>
 
     <p class="center-text">
@@ -103,12 +103,9 @@
     </p>
     <div class="image-row">
     <p><img src="media/out_tobolsk_cropped_l2_norm.jpg" /></p>
-    <p><img src="media/out_tobolsk_cropped_ncc.jpg" /></p>
-    <p><img src="media/out_tobolsk_l2_norm.jpg" /></p>
-    <p><img src="media/out_tobolsk_ncc.jpg" /></p>
     </div>
     <figure>
-    <p> From left to right: cropped L2 norm, cropped NCC, uncropped L2 norm, uncropped NCC. <b> Offset: </b> red: (6, 3), green: (3, 3) </p>
+    <p> <b> Offset: </b> red: (6, 3), green: (3, 3) </p>
     </figure>
 
     <p class="center-text">
@@ -122,13 +119,15 @@
     </figure>
 
     <p class="center-text">
-    <b> Emir </b>
+    <b> Emir (Example of no upscale) </b>
     </p>
     <div class="image-row">
+    <p><img src="media/out_cropped_emir_l2_norm.jpg" /></p>
+    <p><img src="media/out_emir_l2_norm.jpg" /></p>
     <p><img src="media/out_emir_non_upscale_l2_norm.jpg" /></p>
     </div>
     <figure>
-    <p> <b> Offset: </b> red: (57, 17), green: (-3, 7) </p>
+    <p> from left to right: cropped L2 norm, non cropped L2 norm, noncropped L2 norm with no upscale. Used noncropped L2 norm with no upscale. <b> Offset: </b> red: (57, 17), green: (-3, 7) </p>
     </figure>
 
     <p class="center-text">
