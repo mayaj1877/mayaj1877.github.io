@@ -84,7 +84,7 @@
     <h2> Part 2: Fun with Frequencies </h2>
     <h3> Part 2.1: Image Sharpening</h3>
 
-    <p> A lowpass filter blurred the image, but a highpass filter (i.e. taking just the high frequencies of the image) sharpens the image. A high pass filter is actually just the low frequencies taken out of the original image, i.e. image - lowpass_image. </p>
+    <p> A lowpass filter blurred the image, but a highpass filter (i.e. taking just the high frequencies of the image) sharpens the image. A high pass filter is actually just the low frequencies taken out of the original image, i.e. image - lowpass_image. Compared to the orignal image, the sharpened version has more distinct edges, but the colors look more blunt. To me, I like the regular version better than the sharpened version because the regular version feels more smooth. </p>
 
     <div class="image-row">
     <p><img src="media/2.1_source_taj.jpg" /></p>
@@ -105,6 +105,22 @@
     <p> left: original statue, right: sharpened statue </p>
     <p> <b> Note:</b> I had issues saving the image that make this image a bit darker and less accurate. A more accurate version of the sharpened image is in my jupyter notebook. </p>
     </figure>
+
+    <h3> Part 2.2: Hybrid Images </h3>
+
+    In his famous painting of the Mona Lisa, Leonardo Da Vinci implemented cool technology using lowpass and highpass frequencies. If you take just the high frequencies of the Mona Lisa (i.e. look directly at it), she's looking away, frowning. However, if you take just the low frequencies (i.e. use your peripheral vision), she looks like she's looking at you, smiling. Da Vinci combined these frequencies to make the Mona Lisa look like her eyes are following you when you walk away! We can use this same technology to make photos that look like one thing close up, but look like something else from a distance.
+
+    <h4> Image: Man and Cat </h4>
+    <div class="image-row">
+    <p><img src="media/2.2_source_derek.jpg" /></p>
+    <p><img src="media/2.2_source_cat.jpg" /></p>
+    </div>
+
+    <p> becomes... </p>
+    
+    <div class="image-row">
+    <p><img src="media/2.2_hybrid_mancat.png" /></p>
+    </div>
 
     
     
