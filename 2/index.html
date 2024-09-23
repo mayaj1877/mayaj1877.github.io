@@ -57,6 +57,12 @@
     <div class="image-row">
     <p><img src="media/1.1 edge-image.png" /></p>
     </div>
+
+    <p> However, even the best threshold doesn't completely get rid of the unnecessary noise/edges. Therefore, I try a different approach: a lowpass filter, where only low frequencies of an image are shown. To create a lowpass filter, I first blur the image and then convolve that blurred image with a Gaussian filter. Here is the result: </p>
+
+    <div class="image-row">
+    <p><img src="media/1.2 blurred dx, dy, gradmag.png" /></p>
+    </div>
     
 </body>
 </html>
