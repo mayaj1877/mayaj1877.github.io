@@ -184,7 +184,40 @@
     <figure>
     <p> left: Gaussian stack, right: Laplacian stack </p>
     </figure>
-    
+
+    <h3> Part 2.4: Multiresolution Blending </h3>
+    <p> Using a black and white mask image, I created a Gaussian stack of the mask in order to blend the apple and the orange together. The equation is pretty simple: Image = mask * Image_A + (1-mask) * Image_B (and this applies to each layer of the laplacian pyramid). </p>
+
+    <div class="image-row">
+    <p><img src="media/2.4_source_apple.jpeg" /></p>
+    <p><img src="media/2.4_source_orange.jpeg" /></p>
+    <p><img src="media/2.4_mask.png" /></p>
+    </div>
+
+    <p> becomes... </p>
+    <div class="image-row">
+    <p><img src="media/2.4_oraple.png" /></p>
+
+    <h4> Using My Own Photos:</h4>
+
+    <h5>  Monkey-Gorillaz  </h5>
+
+    <p> The monkey wasn't good at hybrid images, but perhaps it is good for blending... </p>
+    <div class="image-row">
+    <p><img src="media/2.2_source_monkey_normal.png" /></p>
+    <p><img src="media/2.4_source_gorilla.png" /></p>
+    <p><img src="media/2.4_monkey-mask.png" /></p>
+    <p><img src="media/2.4_gorilla_monkey.png" /></p>
+    </div>
+
+    <h5>  Irregular Mask: Mimikyu  </h5>
+
+    <div class="image-row">
+    <p><img src="media/2.4_source_maya.png" /></p>
+    <p><img src="media/2.4_souorce_mimikyu.png" /></p>
+    <p><img src="media/2.4_source_mimikyu_mask.png" /></p>
+    <p><img src="media/2.4_mimikyu_maya.png" /></p>
+    </div>
     
 </body>
 </html>
