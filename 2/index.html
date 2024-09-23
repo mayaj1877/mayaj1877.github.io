@@ -161,13 +161,30 @@
 
     <h5> Failure Case: Monkey Side-eye Meme</h5>
     <p> This one was a failure because the two images were too similar evrywhere except the eyes, that it ended up just making the eyes look weird. Hopefully I can use this monkey image for something else... </p>
-
-    <h5> Nessie: Frequency Analysis  </h5>
     <div class="image-row">
     <p><img src="media/2.2_source_monkey_sideeye.png" /></p>
     <p><img src="media/2.2_source_monkey_normal.png" /></p>
     <p><img src="media/2.2_hybrid_monkey.png" /></p>
     </div>
+
+    <h3> Part 2.3: Gaussian and Laplacian Stacks </h3>
+
+    <p> In this section, I implement a Gaussian and Laplacian Stack for images of an apple and orange. At every layer of the Gaussian stack, a lowpass filter is applied (i.e. the image gets blurred). A kth layer of the laplacian stack takes the difference between the kth layer of the Gaussian layer stack and its upscaled image (i.e. k+1th layer of the Gaussian stack, because stacks are first in, last out). </p>
+
+    <div class="image-row">
+    <p><img src="media/2.4_source_apple.jpeg" /></p>
+    <p><img src="media/2.4_source_orange.jpeg" /></p>
+    </div>
+
+    <div class="image-row">
+    <p><img src="media/2.3_gaussian_stacks.png" /></p>
+    <p><img src="media/2.3_laplacian_stacks.png" /></p>
+    </div>
+
+    <figure>
+    <p> left: Gaussian stack, right: Laplacian stack </p>
+    </figure>
+    
     
 </body>
 </html>
