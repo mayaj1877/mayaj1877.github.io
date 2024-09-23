@@ -30,7 +30,9 @@
         }
 
         .bigger-image {
-            width: 400px;  /* Increase size for larger images */
+            width: 500px;  
+            height: auto;     
+            object-fit: contain;
         }
 
         figure {
@@ -194,7 +196,7 @@
     </figure>
 
     <h3> Part 2.4: Multiresolution Blending </h3>
-    <p> Using a black and white mask image, I created a Gaussian stack of the mask in order to blend the apple and the orange together. The equation is pretty simple: Image = mask * Image_A + (1-mask) * Image_B (and this applies to each layer of the laplacian pyramid). </p>
+    <p> Using a black and white mask image, I created a Gaussian stack of the mask in order to blend the apple and the orange together. The equation is pretty simple: Image = mask * Image_A + (1-mask) * Image_B (and this applies to each layer of the laplacian pyramid). One difficulty about this method was that the images had to be the same size.</p>
 
     <div class="image-row">
     <p><img src="media/2.4_source_apple.jpeg" /></p>
@@ -211,7 +213,7 @@
 
     <p> The monkey wasn't good at hybrid images, but perhaps it is good for blending... </p>
     <div class="image-row">
-    <p><img src="media/2.2_source_monkey_normal.png" /></p>
+    <p><img src="media/2.4_source_monkey.png" /></p>
     <p><img src="media/2.4_source_gorilla.png" /></p>
     <p><img src="media/2.4_monkey-mask_copy.png" /></p>
     <p><img src="media/2.4_gorilla_monkey.png" /></p>
@@ -222,11 +224,12 @@
     <h5>  Irregular Mask: Mimikyu  </h5>
 
     <div class="image-row">
-    <p><img src="media/2.4_source_maya.png" /></p>
     <p><img src="media/2.4_souorce_mimikyu.png" /></p>
     <p><img src="media/2.4_source_mimikyu_mask.png" /></p>
     <p><img src="media/2.4_mimikyu_maya.png" class="bigger-image"/></p>
     </div>
+
+    <p> (original image of my face hidden for privacy reasons. Please look at my jupyter notebook for a display of the original image) </p>
     
 </body>
 </html>
