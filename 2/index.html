@@ -64,11 +64,13 @@
     </div>
 
     <p> However, even the best threshold doesn't completely get rid of the unnecessary noise/edges. Therefore, I try a different approach: a lowpass filter, where only low frequencies of an image are shown. To create a lowpass filter, I first blur the image and then convolve that blurred image with a 2D Gaussian filter. Here is the result: </p>
+    
 
     <div class="image-row big-row">
     <p><img src="media/1.2 blurred dx, dy, gradmag.png" /></p>
     </div>
 
+    <p> <b> For all gaussians in this project,</b> I used a ksize of 15 and sigma value of 3. </p>
     <p> <b> DIFFERENCES: </b> Compared to the non-blurred partial derivatives, the blurred version has more apparent edges, and the images look more dented/bumpy in general. </p>
 
     <p> Another thing I did was to take the DoG (Derivative of Gaussian) filters (which, as its name suggests, is a convolution of the 2D Gaussian and the non-blurred partial derivatives. They look like this: </p>
@@ -99,6 +101,7 @@
 
     <figure>
     <p> left: original Taj, right: sharpened Taj </p>
+    <p> <b> For all sharpened images in this project,</b> I used an alpha value of 2. </p>
     </figure>
 
     <h4> Sharpening My Own Photo: Statue at Okinawa, Japan </h4>
