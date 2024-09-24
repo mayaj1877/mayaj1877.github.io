@@ -29,10 +29,9 @@
             object-fit: contain;
         }
 
-        .bigger-image {
-            width: auto;  
-            height: auto;     
-            object-fit: contain;
+        .big-row img {
+            width: auto; 
+            height: auto;  
         }
 
         figure {
@@ -102,7 +101,7 @@
     </figure>
 
     <h4> Sharpening My Own Photo: Statue at Okinawa, Japan </h4>
-    <div class="image-row">
+    <div class="image-row"> 
     <p><img src="media/2.1_source_okinawa.png" /></p>
     <p><img src="media/2.2_okinawa.png" /></p>
     </div>
@@ -184,11 +183,9 @@
     </div>
 
 
-    <div class="container">
-        <div class="image-row">
-            <p><img src="media/2.3_gaussian_stacks.png"  class="bigger-image"/></p>
-            <p><img src="media/2.3_laplacian_stacks.png" class="bigger-image"/></p>
-        </div>
+    <div class="image-row big-row">
+    <p><img src="media/2.3_gaussian_stacks.png"  class="bigger-image"/></p>
+     <p><img src="media/2.3_laplacian_stacks.png" class="bigger-image"/></p>
     </div>
     
     <figure>
@@ -198,7 +195,7 @@
     <h3> Part 2.4: Multiresolution Blending </h3>
     <p> Using a black and white mask image, I created a Gaussian stack of the mask in order to blend the apple and the orange together. The equation is pretty simple: Image = mask * Image_A + (1-mask) * Image_B (and this applies to each layer of the laplacian pyramid). One difficulty about this method was that the images had to be the same size.</p>
 
-    <div class="image-row">
+    <div class="image-row"> 
     <p><img src="media/2.4_source_apple.jpeg" /></p>
     <p><img src="media/2.4_source_orange.jpeg" /></p>
     <p><img src="media/2.4_mask.png" /></p>
