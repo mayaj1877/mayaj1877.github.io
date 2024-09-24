@@ -54,17 +54,17 @@
 
     <p> In this part, I take the partial derivatives of the Cameraman image in both the x direction and the y direction. One notable difference between the two is that the partial derivative with respect to x highlights vertical edges, while the partial derivative with respect to y highlights horizontal edges. Once I take the partial derivatives, I get the gradient magnitude by taking the square root of a sum of the squares of the x and y partial derivatives. I can choose how strong I want the edges to be by limiting the magnitude to a certain threshold. For example, a threshold of 0 would show every single edge possible (resulting in almost a white image), while a threshold of 1 (and about 0.7 in the case of the Cameraman image) would show a black image because no edges are visible. After fidgeting with the thresholds, I found that 0.3 was a perfect threshold where the edges of the man get highlighted without the edges of the background getting highlighted. </p>
 
-    <div class="image-row">
+    <div class="image-row big-row">
     <p><img src="media/1.1 dx_dy_gradient_magnitude.png" /></p>
     </div>
 
-    <div class="image-row">
+    <div class="image-row big-row">
     <p><img src="media/1.1 edge-image.png" /></p>
     </div>
 
     <p> However, even the best threshold doesn't completely get rid of the unnecessary noise/edges. Therefore, I try a different approach: a lowpass filter, where only low frequencies of an image are shown. To create a lowpass filter, I first blur the image and then convolve that blurred image with a 2D Gaussian filter. Here is the result: </p>
 
-    <div class="image-row">
+    <div class="image-row big-row">
     <p><img src="media/1.2 blurred dx, dy, gradmag.png" /></p>
     </div>
 
@@ -82,7 +82,7 @@
     </figure>
 
     <p> However, this yielded <b>the same</b> image as the blurred version: </p>
-    <div class="image-row">
+    <div class="image-row big-row">
     <p><img src= "media/1.2_regular_vs_dog_blur.png" /> </p>
     </div>
 
@@ -177,10 +177,6 @@
     <p><img src="media/2.4_source_orange.jpeg" /></p>
     </div>
 
-    <div class="image-row">
-    <p><img src="media/2.3_gaussian_stacks.png" /></p>
-    <p><img src="media/2.3_laplacian_stacks.png" /></p>
-    </div>
 
 
     <div class="image-row big-row">
