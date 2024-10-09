@@ -65,7 +65,7 @@
     
     <h2> Part 1: Defining Correspondences </h2>
 
-    <p> In this part, I use the ginput function to assign points to both images that i want to morph together. I used a photo of myself and an idol named Wonyoung. In this section only, I call the Delaunay function on the points for each image to get a Delaunay triangulation unique to that photo. These trianguulations are made just for this part -- I will instead be using a Delaunay triangulation of the **mean** points of both images for part 2.  </p>
+    <p> In this part, I use the ginput function to assign points to both images that i want to morph together. I used a photo of myself and an idol named Wonyoung. In this section only, I call the Delaunay function on the points for each image to get a Delaunay triangulation unique to that photo. These trianguulations are made just for this part -- I will instead be using a Delaunay triangulation of the <b> mean </b> points of both images for part 2.  </p>
 
   <p> Three key lessons that caused me to struggle with this problem were that: 1) The images have to be <b> very </b> aligned (looking in the same direction, same angle, same <b> face </b> size, etc), 2) the points have to be labeled <b> in the same order for both images </b> (ex. if point 4 is on my eye, point 4 also has to be on Wonyoung's eye as well, and 3) I need to include the corners of the photos in my point set. Even though both im1 and im2 had the same photo size (ex. 750x900), the face sizes were different (i.e. Wonyoung was zoomed in so her face was bigger), so my morph didn't look that good. To mitigate this issue, I added a border to Wonyoung's photo and shrinked the photo inside the border so that our face sizes would be more similar. </p>
 
