@@ -96,26 +96,19 @@
     
     <p> However, this halfway face just looks like two faces overlayed. It doesn't actually transform my face onto a mean face. Therefore, I calculate a mean face and then transform my face onto the mean face. Then, I tranform the image 2 face onto the mean face, and crossblur the resulting transformed images using the crossblur equation. Therefore, instead of using individual Delaunays, I take an average of image 1 and image 2's points and average them to create a Delaunay triangulation based on the mean points. </p>
 
-    <div class="image-row mid-row">
+    <div class="image-row big-row">
     <p><img src="media/mean_delaunay_maya.png" /></p>
     <p><img src="media/mean_delaunay_wony.png" /></p>
     </div>
 
 <p> Now I have both the image 1 points and the mean points, and the mean triangles. For each triangle, I get the relevant points values of that triangle for both image 1 and the mean image. Mathematically, an affine matrix multiplied by the original points warps the points to the mean points. However, according to the lecture an inverse warp is better, so instead we warp the mean points onto the original points. Then, I average the colors via bilinear interpolation. Initially I used polygon as the spec suggested, but that gave my photos white streaks, so I used interp2d instead. </p>
 
-    <h4> maya --> morphed maya --> mid-way face <-- morphed wonyoung <-- wonyoung </h4>
-    <div class="image-row mid-row">
-    <p><img src="media/maya.png" /></p>
-
+    <h4> morphed maya --> mid-way face <-- morphed wonyoung </h4>
+    
     <div class="image-row big-row">
     <p><img src="media/maya_morph_final.png" /></p>
     <p><img src="media/halfway_image.png" /></p>
     <p><img src="media/wony_morph_final.png" /></p>
-
-    <div class="image-row mid-row">
-    <p><img src="media/wony.png" /></p>
-    </div>
-    </div>
     </div>
         
         
