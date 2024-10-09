@@ -103,6 +103,7 @@
 
 <p> Now I have both the image 1 points and the mean points, and the mean triangles. For each triangle, I get the relevant points values of that triangle for both image 1 and the mean image. Mathematically, an affine matrix multiplied by the original points warps the points to the mean points. However, according to the lecture an inverse warp is better, so instead we warp the mean points onto the original points. Then, I average the colors via bilinear interpolation. Initially I used polygon as the spec suggested, but that gave my photos white streaks, so I used interp2d instead. </p>
 
+    <h4> maya --> morphed maya --> mid-way face <-- morphed wonyoung <-- wonyoung </h4>
     <div class="image-row mid-row">
     <p><img src="media/maya.png" /></p>
     <p><img src="media/maya_morph_final.png" /></p>
@@ -110,7 +111,8 @@
     <p><img src="media/wony_morph_final.png" /></p>
     <p><img src="media/wony.png" /></p>
     </div>
-    
+        
+        
     <h2> Conclusion </h2>
     <p> In this project I played around with faces. One key takeaway is that face morphing doesn't use some fancy technology like neural networks or ML algorithms -- in fact, it is just linear algebra. I also learned that in order for face morphing to work well, I need two images that are aligned or else it doesn't work that well. </p>
 
