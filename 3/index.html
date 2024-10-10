@@ -111,20 +111,99 @@
     <p><img src="media/wony_morph_final.png" /></p>
     </div>
 
-<p> <b> Aside: </b> There were a few methods in Ed that all perform bilinear interpolation: griddata, interp2d, regular grid interpolator, etc. Initially I used griddata as the spec suggested, but that gave my photos white streaks, so I used interp2d instead. However, when debugging my griddata function I noticed there are multiple ways to interpolate (other than bilinear). The griddata function offered a few options, so I tried them (left = spherical interpolation, right = nearest neighbor interpolation): </p>
+<p> <b> Aside: </b> There were a few methods in Ed that all perform bilinear interpolation: griddata, interp2d, regular grid interpolator, etc. Initially I used griddata as the spec suggested, but that gave my photos white streaks, so I used interp2d instead (interp2d has its flaws too though -- it is slower than griddata and also sometimes produces black dots). However, when debugging my griddata function I noticed there are multiple ways to interpolate (other than bilinear). The griddata function offered a few options, so I tried them: </p>
 
     <div class="image-row big-row">
     <p><img src="media/bruhmoment (sphere, linear).png" /></p>
     <p><img src="media/nearest.png" /></p>
     </div>
+
+    <figure>
+    <p> left = spherical interpolation, right = nearest neighbor interpolation </p>
+    </figure>
     
     <h2> Part 3: The Morph Sequence </h2>
 
-    I use the functions from part 2 but adjust the t value (crossblur factor) to make a morph sequence. 
+    <p> I use the functions from part 2 but adjust the t value (crossblur factor) to make a morph sequence.  </p>
 
      <div class="image-row big-row">
     <p><img src="media/maya_to_wony_gif.gif" /></p>
     </div>
+
+    <h2> Part 4: The Average Face </h2>
+
+    <p> For this part, I use the Danes dataset to get photos of Danish women and average them together to create the portrait of an average Danish person. To get the average person, I morphed each image onto the average points (mean of the correspondences). To warp an individual face onto the average face, I use the morph function and set warp to 1 and dissolve to 0. </p>
+
+    <p> Note: I accidentally defined my own correspondences instead of using the ones in the asf files. Since I only defined 25 (while I think the asf files had way more than 25), my version of the average face doesn't look as good as a version using the points from the asf files. </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/bruhmoment (sphere, linear).png" /></p>
+    <p><img src="media/nearest.png" /></p>
+    </div>
+
+
+    <h2> Part 5: Caricatures: Extrapolating from the Mean </h2>
+
+    <p> To make a caricature, I extrapolate my points from the mean. I multiply the subtracted points by an alpha factor. Alpha > 1 represents how much of a caricature I want to have. I tried multiple alpha values: </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/average_wdane.png" /></p>
+    </div>
+    <figure>
+    <p> The Average Danish Woman (at least according to my 25 points) </p>
+    </figure>
+
+    <div class="image-row big-row">
+    <p><img src="media/w3.bmp" /></p>
+    <p><img src="media/w3_average.png" /></p>
+    </div>
+
+    <figure>
+    <p> left = a Danish woman, right = morphed to the average Danish face </p>
+    </figure>
+
+    <div class="image-row big-row">
+    <p><img src="media/w6.bmp" /></p>
+    <p><img src="media/w6_average.png" /></p>
+    </div>
+
+    <figure>
+    <p> left = another Danish woman, right = morphed to the average Danish face </p>
+    </figure>
+
+    <div class="image-row big-row">
+    <p><img src="media/maya_dane_dim.png" /></p>
+    <p><img src="media/average_maya.png" /></p>
+    <p><img src="media/maya_average.png.png" /></p>   
+    </div>
+
+    <figure>
+    <p> My face morphed onto the average Danish and vice versa.  </p>
+    </figure>
+
+    <h2> Part 6: Bells and Whistles </h2>
+
+    <p> I am biracial, however -- what would I look like if I was fully white? </p>
+    <div class="image-row big-row">
+    <p><img src="media/maya_dim_of_white_woman.png" /></p>
+    <p><img src="media/white_woman.jpg" /></p>
+    </div>
+
+    <figure>
+    <p> Above is a portrait of the average white woman that I found on the internet. </p>
+    </figure>
+
+    <div class="image-row big-row">
+    <p><img src="media/warp_0.5_dissolve_0.png" /></p>
+    <p><img src="media/warp_0_dissolve_0.5.png" /></p>
+    <p><img src="media/warp_0.5_dissolve_0.5.png" /></p>
+    </div>
+
+    <figure>
+    <p> To warp just the shape, I increase just the warp factor. To warp the colors, I increase just the dissolve factor. To get the true morph, I set both factors to the same value. </p>
+    </figure>
+    
+    
     
     <h2> Conclusion </h2>
     <p> In this project I played around with faces. One key takeaway is that face morphing doesn't use some fancy technology like neural networks or ML algorithms -- in fact, it is just linear algebra. I also learned that in order for face morphing to work well, I need two images that are aligned or else it doesn't work that well. </p>
