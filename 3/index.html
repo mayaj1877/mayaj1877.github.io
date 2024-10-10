@@ -134,6 +134,8 @@
 
     <h2> Part 4: The Average Face </h2>
 
+    <p> <b> Note:</b> For part 4 and 5, I noticed there were sometimes some black dots in the images. These were coming from the polygon perimeter function, and when removing them the dots went away as well. Therefore, I reran some of the code chunks and replaced my original photos with dots with the non-dot version for photos where the black dots were very bothersome. </p>
+
     <p> For this part, I use the Danes dataset to get photos of Danish women and average them together to create the portrait of an average Danish person. To get the average person, I morphed each image onto the average points (mean of the correspondences). To warp an individual face onto the average face, I use the morph function and set warp to 1 and dissolve to 0. </p>
 
     <p> Note: I accidentally defined my own correspondences instead of using the ones in the asf files. Since I only defined 25 (while I think the asf files had way more than 25), my version of the average face doesn't look as good as a version using the points from the asf files. </p>
@@ -196,13 +198,13 @@
     </figure>
 
     <div class="image-row big-row">
-    <p><img src="media/warp_0.5_dissolve_0.png" /></p>
-    <p><img src="media/warp_0_dissolve_0.5.png" /></p>
-    <p><img src="media/warp_0.5_dissolve_0.5.png" /></p>
+    <p><img src="media/warppoint5.png" /></p>
+    <p><img src="media/dissolvepoint5.png" /></p> 
+    <p><img src="media/equal.png" /></p>
     </div>
 
     <figure>
-    <p> To warp just the shape, I increase just the warp factor. To warp the colors, I increase just the dissolve factor. To get the true morph, I set both factors to the same value. </p>
+    <p> To warp just the shape, I increase just the warp factor. To warp the colors, I increase just the dissolve factor. To get the true morph, I set both factors to the same value. Left to right: 0.5 warp, 0.5 dissolve, 0.5 both</p>
     </figure>
     
     
