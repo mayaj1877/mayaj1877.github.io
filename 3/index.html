@@ -101,7 +101,7 @@
     <p><img src="media/mean_delaunay_wony.png" /></p>
     </div>
 
-<p> Now I have both the image 1 points and the mean points, and the mean triangles. For each triangle, I get the relevant points values of that triangle for both image 1 and the mean image. Mathematically, an affine matrix multiplied by the original points warps the points to the mean points. However, according to the lecture an inverse warp is better, so instead we warp the mean points onto the original points. Then, I average the colors via bilinear interpolation. Initially I used polygon as the spec suggested, but that gave my photos white streaks, so I used interp2d instead. </p>
+<p> Now I have both the image 1 points and the mean points, and the mean triangles. For each triangle, I get the relevant points values of that triangle for both image 1 and the mean image. Mathematically, an affine matrix multiplied by the original points warps the points to the mean points. However, according to the lecture an inverse warp is better, so instead we warp the mean points onto the original points. Then, I average the colors via bilinear interpolation. </p>
 
     <h4> morphed maya --> mid-way face <-- morphed wonyoung </h4>
     
@@ -111,6 +111,13 @@
     <p><img src="media/wony_morph_final.png" /></p>
     </div>
 
+<p> <b> Aside: </b> There were a few methods in Ed that all perform bilinear interpolation: griddata, interp2d, regular grid interpolator, etc. Initially I used griddata as the spec suggested, but that gave my photos white streaks, so I used interp2d instead. However, when debugging my griddata function I noticed there are multiple ways to interpolate (other than bilinear). The griddata function offered a few options, so I tried them (left = spherical interpolation, right = nearest neighbor interpolation): </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/bruhmoment (sphere, linear).png" /></p>
+    <p><img src="media/nearest.png" /></p>
+    </div>
+    
     <h2> Part 3: The Morph Sequence </h2>
 
     I use the functions from part 2 but adjust the t value (crossblur factor) to make a morph sequence. 
