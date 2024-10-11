@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 4: </title>
+    <title> Project 4A: Image Warping and Mosaicing </title>
+    <style>
+        body {
+            font-family: Georgia, Times New Roman, Arial, sans-serif;
+            margin: 40px;
+            padding: 40px;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 40px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center; 
+            gap: 0;
+        }
+
+        .image-row img {
+            width: 200px;  
+            height: auto;     
+            object-fit: contain;
+        }
+
+        .big-row img {
+            width: 400px; 
+            height: 400px;    
+            object-fit: contain;
+            padding: 0;    
+            margin: 0;    
+            border: none;  
+            gap: 0;
+        }
+
+        .mid-row img {
+            width: 200px; 
+            height: 200px;    
+            padding: 0;    
+            margin: 0;    
+            border: none;  
+            gap: 0;
+        }
+
+        figure {
+            text-align: center;
+        }
+ 
+        .center-text {
+            text-align: center; 
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <h1> Project 4: Auto-Stitching Photo Mosaics </h1>
+    <h2> by Maya Joiner </h2>
+
+    
+    <h2> Part 4A: Image Warping and Mosaicing </h2>
+
+    <p> In this part, </p>
+  
+    <h4> Images Used </h4>
+    <div class="image-row mid-row">
+    <p><img src="media/zora1.jpg" /></p>
+    <p><img src="media/zora2.jpg" /></p>
+    </div>
+
+    <figure>
+    <p> Zora's domain from <i> The Legend of Zelda: Tears of the Kingdom. </i> </p>
+    </figure>
+
+    <div class="image-row mid-row">
+    <p><img src="media/berk1.jpg" /></p>
+    <p><img src="media/berk2.jpg" /></p>
+    <p><img src="media/berk3.jpg" /></p>
+    </div>
+
+    <figure>
+    <p> View of Berkeley Campus from my friend's apartment. </p>
+    </figure>
+
+    <div class="image-row mid-row">
+    <p><img src="media/zelda1.jpg" /></p>
+    <p><img src="media/zelda2.jpg" /></p>
+    <p><img src="media/zelda3.jpg" /></p>
+    </div>
+
+    <figure>
+    <p> Necluda Sky Archipelago from <i> The Legend of Zelda: Tears of the Kingdom. </i> </p>
+    </figure>
+
+    
+
+    <h2> Conclusion </h2>
+    <p> In this project I played around with faces. One key takeaway is that face morphing doesn't use some fancy technology like neural networks or ML algorithms -- in fact, it is just linear algebra. I also learned that in order for face morphing to work well, I need two images that are aligned or else it doesn't work that well. </p>
+
+    
+    
+</body>
+</html>
