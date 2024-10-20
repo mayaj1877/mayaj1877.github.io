@@ -65,7 +65,7 @@
     
     <h2> Part 4A: Image Warping and Mosaicing </h2>
 
-    <p> In this part, </p>
+    <p> In this part, I create a homography matrix to warp Images onto different perspectives and ultimately create a photo mosaic. </p>
   
     <h4> Images Used </h4>
     <div class="image-row big-row">
@@ -87,10 +87,19 @@
     <p> View of Berkeley Campus from my friend's apartment. </p>
     </figure>
 
-    <h2> Conclusion </h2>
-    <p> In this project I played around with faces. One key takeaway is that face morphing doesn't use some fancy technology like neural networks or ML algorithms -- in fact, it is just linear algebra. I also learned that in order for face morphing to work well, I need two images that are aligned or else it doesn't work that well. </p>
+    <p> In order to create a mosaic, I first created a homography matrix, which is a 3x3 matrix used for warping source points p into the destination points q. Here is a derivation: </p>
 
-    
+    <div class="image-row mid-row">
+    <p><img src="media/page1.png" /></p>
+    <p><img src="media/page2.png" /></p>
+    </div>
+
+    <p> These equations are solved via least squares to get the homography matrix H. Once we get that, we can inverse warp the destination points q using the inverse of the H matrix to calculate where the points in the source image came from. One tricky thing about the warping function was that I needed to make a new bigger canvas for warped image just in case some pixels from the source image warp to a pixel location beyond the size of the image. </p>
+
+    <p> Once we warp the images, </p>
+
+    <h2> Conclusion </h2>
+    <p> In this project I played around with mosaics. One key takeaway I learned is that image mosaicing is a little bit more complex than the other topics in past projects because it incorporates morphing and blending at the same time. </p>
     
 </body>
 </html>
