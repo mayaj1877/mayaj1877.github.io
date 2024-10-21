@@ -86,9 +86,16 @@
     <p><img src="media/berk2.jpg" /></p>
     </div>
 
+
     <figure>
     <p> View of Berkeley Campus from my friend's apartment. </p>
     </figure>
+
+    <h4> Images Used: Mosaic of Sunset </h4>
+    <div class="image-row big-row">
+    <p><img src="media/sunset1.png" /></p>
+    <p><img src="media/sunset2.png" /></p>
+    </div>
 
     <p> In order to create a mosaic, I first created a homography matrix, which is a 3x3 matrix used for warping source points p into the destination points q. Here is a derivation: </p>
 
@@ -116,12 +123,18 @@
     <p><img src="media/rectified_av.png" /></p>
     </div>
 
-    <p> We can also use this function to create panoramas using two images: </p>
+    <p> We can also use this function to create panoramas using two images. To blend the images seamlessly, I used code from project 2 to create Laplacian stacks of images and a Gaussian stack of a mask (which I created myself). </p>
 
     <div class="image-row big-row">
     <p><img src="media/berk1.jpg" /></p>
     <p><img src="media/berk2.jpg" /></p>
     <p><img src="media/isthisbetter.png" /></p>
+    </div>
+
+    <div class="image-row big-row">
+    <p><img src="media/sunset1.png" /></p>
+    <p><img src="media/sunset2.png" /></p>
+    <p><img src="media/blended sunset.png" /></p>
     </div>
 
     <h2> Conclusion </h2>
