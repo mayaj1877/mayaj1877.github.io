@@ -54,6 +54,17 @@
             gap: 5;
         }
 
+        .text-with-image {
+            display: flex;
+            align-items: center; /* Aligns image and text vertically */
+            gap: 15px; /* Space between image and text */
+        }
+        
+        .text-with-image img {
+            width: 300px; /* Adjust size */
+            height: auto;
+        }
+        
         figure {
             text-align: center;
         }
@@ -175,13 +186,13 @@
 
     <h4> Detecting corner features in an image </h4>
 
-<p>
+    <div class="text-with-image">
     <img src="media/anms_drawing.png" class="inline-image" />
     <p> First, I use the provided harris corners code to detect corners in my image. </p>
         
     <p> However, a lot of these Harris corners overlap. Therefore, I used ANMS (adaptive non-maximal suppression) to only get the Harris corners that are spread out.     
     Conceptually, ANMS is done using the Harris matrix -- each Harris corner is assigned a strength, so we try to suppress corners that are near another corner that has a higher strength. For example, in my drawing, B and A are near each other, but B has a larger strength than A, so B suppresses A. We can specify how many corners we want to keep, so we repeat the process of getting the distance for each Harris corner and then take the n corners with the largest distances.  </p>
-</p>
+    </div>
 
 
     <p> Now that I have good corners of image 1 and image 2, I can match them together. To do that, I first perform SOPS (single-scale oriented patches). Conceptually, for each ANMS corner, I make a 40x40 small box around it and then sample 8x8 pixels from that box with a spacing of s=5. </p>
