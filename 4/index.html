@@ -214,8 +214,7 @@
 </div>
 
     <div class="image-row big-row">
-    <p><img src="media/no_ransac_matches_zelda.png" /></p>
-    <p><img src="media/no_ransac_zoomed.png" /></p>
+    <p><img src="media/matches_zora.png" /></p>
     </div>
     
     <p> As you can see in these photos (especially in the zoomed version), some points map to more than one point, and many matches are not correct. Therefore, we use RANSAC to further filter bad matches. </p>
@@ -223,12 +222,13 @@
     <p> RANSAC has the following algorithm: 1) Select four feature pairs (at random). 2) Compute homography H (exact). 3) Compute inliers where dist(pi’, H pi ) less than epsilon. 4) Keep largest set of inliers. 5) Re-compute least-squares H estimate on all of the inliers. Doing so, I filtered out bad matches: </p>
 
     <div class="image-row big-row">
-    <p><img src="media/ransac_matches_zelda.png" /></p>
+    <p><img src="media/ransac_zora.png" /></p>
     </div>
 
     <p> From there, I could use my code from project 4A to get a homography matrix from the calculated RANSAC points and warp the image and blend the two images together. Here is the final result: </p>
 
     <div class="image-row big-row">
+    <p><img src="media/warped_zora1.png.png" /></p>
     <p><img src="media/final_auto_pano_zelda.png" /></p>
     </div>
     
