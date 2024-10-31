@@ -195,7 +195,31 @@
     </div>
 
 
-    <p> Now that I have good corners of image 1 and image 2, I can match them together. To do that, I first perform SOPS (single-scale oriented patches). Conceptually, for each ANMS corner, I make a 40x40 small box around it and then sample 8x8 pixels from that box with a spacing of s=5. </p>
+    <div class="text-with-image">
+    <img src="media/zelda1_mops.png" class="inline-image" />
+    <p> Now that I have good corners of image 1 and image 2, I can match them together. To do that, I first perform SOPS (single-scale oriented patches). Conceptually, for each ANMS corner, I first blur the image, and then sample 8x8 pixels from that blurred image with a spacing of s=5 (if the sampled point is outside of the image, then that position is just 0). Then, the samples are normalized. </p>
+
+    <p> Then, I get the distance between the samples of both images. For each sample, I get the  nearest neighbor (nn1) and the second nearest neighbor (nn2). Conceptually, if both nearest neighbors are equally as good, we don't want to use either of them -- we only want to take nn1 if nn1 is significantly better than nn2 (Lowe's trick). Therefore, we set a threshold (ex. 0.6) of how much better nn1 has to be compared to nn2. This can be used to match points together: </p>
+    </div>
+
+    <div class="image-row big-row">
+    <p><img src="media/no_ransac_matches_zelda.png" /></p>
+    <p><img src="media/no_ransac_zoomed.png" /></p>
+    </div>
+    
+    <p> As you can see in these photos (especially in the zoomed version), some points map to more than one point, and many matches are not correct. Therefore, we use RANSAC to further filter bad matches. </p>
+
+    <p> RANSAC has the following algorithm: 1) Select four feature pairs (at random). 2) Compute homography H (exact). 3) Compute inliers where dist(pi’, H pi ) less than epsilon. 4) Keep largest set of inliers. 5) Re-compute least-squares H estimate on all of the inliers. Doing so, I filtered out bad matches: </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/ransac_matches_zelda.png" /></p>
+    </div>
+
+    <p> From there, I could use my code from project 4A to get a homography matrix from the calculated RANSAC points and warp the image and blend the two images together. Here is the final result: </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/final_auto_pano_zelda.png" /></p>
+    </div>
     
     <h2> Conclusion </h2>
     <p> In this project I played around with mosaics. One key takeaway I learned is that image mosaicing is a little bit more complex than the other topics in past projects because it incorporates morphing and blending at the same time. </p>
