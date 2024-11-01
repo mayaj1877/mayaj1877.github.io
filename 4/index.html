@@ -18,8 +18,15 @@
             text-align: center;
         }
 
-        .inline-image {
+        .inline-image-left {
             float: left; /* or 'right' */
+            margin: 0 15px 15px 0; /* Adds space around the image */
+            width: 300px; /* Optional: Control image size */
+            height: auto;
+        }
+
+        .inline-image-right {
+            float: right;
             margin: 0 15px 15px 0; /* Adds space around the image */
             width: 300px; /* Optional: Control image size */
             height: auto;
@@ -194,7 +201,7 @@
     <h4> Detecting corner features in an image </h4>
 
     <div class="text-with-image">
-    <img src="media/anms_drawing.png" class="inline-image" />
+    <img src="media/anms_drawing.png" class="inline-image-left" />
     <div>
         <p> First, I use the provided harris corners code to detect corners in my image. </p>
 
@@ -205,7 +212,7 @@
 </div>
    
     <div class="text-with-image">
-    <img src="media/zelda1_mops.png" class="inline-image" />
+    <img src="media/zelda1_mops.png" class="inline-image-right" />
     <div>
         <p> Now that I have good corners of image 1 and image 2, I can match them together. To do that, I first perform SOPS (single-scale oriented patches). Conceptually, for each ANMS corner, I first blur the image, and then sample 8x8 pixels from that blurred image with a spacing of s=5 (if the sampled point is outside of the image, then that position is just 0). Then, the samples are normalized. </p>
     
