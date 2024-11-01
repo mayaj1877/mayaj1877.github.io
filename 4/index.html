@@ -238,7 +238,7 @@
     
     <p> As you can see in these photos (especially in the zoomed version), some points map to more than one point, and many matches are not correct. Therefore, we use RANSAC to further filter bad matches. </p>
 
-    <p> RANSAC has the following algorithm: 1) Select four feature pairs (at random). 2) Compute homography H (exact). 3) Compute inliers where dist(pi’, H pi ) less than epsilon. 4) Keep largest set of inliers. 5) Re-compute least-squares H estimate on all of the inliers. Doing so, I filtered out bad matches: </p>
+    <p> RANSAC has the following algorithm: first, select four feature pairs at random, and compute a homography H off of those points. Then, compute inliers where the distance dist(qi’, H pi) is less then a certain threshold (qi is the destination and pi is the source). Keep the largest set of inliers and re-compute least-squares H estimate on all of the inliers. Doing so, I filtered out bad matches: </p>
 
     <div class="image-row big-row">
     <p><img src="media/ransac_zora.png" /></p>
