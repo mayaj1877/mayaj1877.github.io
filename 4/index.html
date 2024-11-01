@@ -231,9 +231,27 @@
     <p><img src="media/warped_zora1.png" /></p>
     <p><img src="media/final_auto_pano_zelda.png" /></p>
     </div>
+
+    <p> I also tried comparing my auto mosaic with my manual mosaic. The automatic one looks smoother. </p>
+    <div class="image-row big-row">
+    <p><img src="media/mosaic_sunset_final.png" /></p>
+    <p><img src="media/ransac_sunset.png" /></p>
+    </div>
+
+    <p> However, that doesn't necessarily mean that the automatic one is always better. Consider these photos: </p>
+    <div class="image-row big-row">
+    <p><img src="media/totk1.png" /></p>
+    <p><img src="media/totk2.png" /></p>
+    </div>
+
+    <p> These images were taken during a sunset, so the colors of the images don't match. In addition, since these images were taken near the sky, there are not many corners and instead many clouds that move around, which make it particularly hard for auto-stitching algorithms to detect good matches. This was the best I could do for this example: </p>
+    
+    <div class="image-row big-row">
+    <p><img src="media/ransac_totk.png" /></p>
+    </div>
     
     <h2> Conclusion </h2>
-    <p> In this project I played around with mosaics. One key takeaway I learned is that image mosaicing is a little bit more complex than the other topics in past projects because it incorporates morphing and blending at the same time. </p>
+    <p> In this project I played around with mosaics. Two key takeaways from this project are that 1) image mosaicing is a little bit more complex than the other topics in past projects because it incorporates morphing and blending at the same time, and 2) auto-stitching and manual stitching each come with tradeoffs where auto-stitching is significantly more efficient and usually more accurate but could fail entirely when the images don't have many corners or have different colors. </p>
 
 
     
