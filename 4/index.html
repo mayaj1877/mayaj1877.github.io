@@ -92,52 +92,6 @@
     <h2> Part 4A: Image Warping and Mosaicing </h2>
 
     <p> In this part, I create a homography matrix to warp Images onto different perspectives and ultimately create a photo mosaic. </p>
-
-
-    
-    <h4> Images Used: Rectification </h4>
-    <div class="image-row big-row">
-    <p><img src="media/music.jpg" /></p>
-    <p><img src="media/owl.png" /></p>
-    <p><img src="media/aviation.jpg" /></p>
-    </div>
-
-    <figure>
-    <p> Some things on my wall in my room. The last photo is a photo I took of the sky in south Seattle. </i> </p>
-    </figure>
-
-    <h4> Images Used: Mosaic of Berkeley </h4>
-    <div class="image-row big-row">
-    <p><img src="media/berk1.jpg" /></p>
-    <p><img src="media/berk2.jpg" /></p>
-    </div>
-
-
-    <figure>
-    <p> View of Berkeley Campus from my friend's apartment. </p>
-    </figure>
-
-    <h4> Images Used: Mosaic of Sunset </h4>
-    <div class="image-row big-row">
-    <p><img src="media/sunset1.png" /></p>
-    <p><img src="media/sunset2.png" /></p>
-    </div>
-
-    <figure>
-    <p> View of Downtown from another friend's apartment. </p>
-    </figure>
-
-    <h4> Images Used: Mosaic of Archipelago </h4>
-    <div class="image-row big-row">
-    <p><img src="media/zelda1.jpg" /></p>
-    <p><img src="media/zelda2.jpg" /></p>
-    </div>
-
-    <figure>
-    <p> View from the Necluda Sky Archipelago from <i> The Legend of Zelda: Tears of the Kingdom </i>. </p> 
-    </figure>
-
-    
     <p> In order to create a mosaic, I first created a homography matrix, which is a 3x3 matrix used for warping source points p into the destination points q. Here is a derivation: </p>
 
     <div class="image-row big-row">
@@ -154,15 +108,27 @@
     <p><img src="media/new_owl_rectified.png" /></p>
     </div>
 
+    <figure>
+    <p> The clock in my room </p>
+    </figure>
+
     <div class="image-row big-row">
     <p><img src="media/music.jpg" /></p>
     <p><img src="media/new_music_rectified.png" /></p>
     </div>
 
+    <figure>
+    <p> A rug that my dad made for me </p>
+    </figure>
+
     <div class="image-row big-row">
     <p><img src="media/aviation.jpg" /></p>
     <p><img src="media/new_rectified_av.png" /></p>
     </div>
+
+    <figure>
+    <p> A photo I took of the sky in south Seattle </p>
+    </figure>
 
     <p> We can also use this function to create panoramas using two images. To blend the images seamlessly, I used code from project 2 to create Laplacian stacks of images and a Gaussian stack of a simple black and white mask (which I created myself). </p>
 
@@ -172,17 +138,29 @@
     <p><img src="media/mosaic_berk_final.png" /></p>
     </div>
 
+    <figure>
+    <p> View of Berkeley Campus from my friend's apartment </p>
+    </figure>
+
     <div class="image-row big-row">
     <p><img src="media/sunset1.png" /></p>
     <p><img src="media/sunset2.png" /></p>
     <p><img src="media/mosaic_sunset_final.png" /></p>
     </div>
 
+    <figure>
+    <p> View of Downtown Berkeley from another friend's apartment </p>
+    </figure>
+
     <div class="image-row big-row">
     <p><img src="media/zelda1.jpg" /></p>
     <p><img src="media/zelda2.jpg" /></p>
     <p><img src="media/mosaic_zelda_final.png" /></p>
     </div>
+
+    <figure>
+    <p> View from the Necluda Sky Archipelago from <i> The Legend of Zelda: Tears of the Kingdom </i> </p> 
+    </figure>
 
     <div class="image-row big-row">
     <p><img src="media/phrase1.jpg" /></p>
@@ -192,11 +170,15 @@
 
     <h2> Project 4B: Feature Matching for Auto-Stitching </h2>
 
-    <h4> Images Used: Zora Domain </h4>
+    <h4> Images Used: Zora's Domain </h4>
     <div class="image-row big-row">
     <p><img src="media/zora1.jpg" /></p>
     <p><img src="media/zora2.jpg" /></p>
     </div>
+
+    <figure>
+    <p> View from the Zora's Domain from <i> The Legend of Zelda: Tears of the Kingdom </i> </p> 
+    </figure>
     
     <h4> Detecting corner features in an image </h4>
 
@@ -250,6 +232,10 @@
     <p><img src="media/totk1.png" /></p>
     <p><img src="media/totk2.png" /></p>
     </div>
+
+    <figure>
+    <p> Sunset from <i> The Legend of Zelda: Tears of the Kingdom </i> </p> 
+    </figure>
 
     <p> These images were taken during a sunset, so the colors of the images don't match. In addition, since these images were taken near the sky, there are not many corners and instead many clouds that move around, which make it particularly hard for auto-stitching algorithms to detect good matches. This was the best I could do for this example: </p>
     
