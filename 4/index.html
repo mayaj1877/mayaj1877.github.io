@@ -67,6 +67,21 @@
             align-items: center; /* Aligns image and text vertically */
             gap: 15px; /* Space between image and text */
         }
+
+        .text-with-image-left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Right-aligned image */
+        .text-with-image-right {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 15px;
+        }
         
         .text-with-image img {
             width: 300px; /* Adjust size */
@@ -168,6 +183,10 @@
     <p><img src="media/Screen Shot 2024-10-27 at 4.22.20 AM.png" /></p>
     </div>
 
+    <figure>
+    <p> Two phrases making an entirely new phrase </p>
+    </figure>
+
     <h2> Project 4B: Feature Matching for Auto-Stitching </h2>
 
     <h4> Images Used: Zora's Domain </h4>
@@ -182,8 +201,8 @@
     
     <h4> Detecting corner features in an image </h4>
 
-    <div class="text-with-image">
-    <img src="media/anms_drawing.png" class="inline-image-left" />
+    <div class="text-with-image-left">
+    <img src="media/anms_drawing.png" />
     <div>
         <p> First, I use the provided harris corners code to detect corners in my image. </p>
 
@@ -193,8 +212,8 @@
     </div>
 </div>
    
-    <div class="text-with-image">
-    <img src="media/zelda1_mops.png" class="inline-image-right" />
+    <div class="text-with-image-right">
+    <img src="media/zelda1_mops.png" />
     <div>
         <p> Now that I have good corners of image 1 and image 2, I can match them together. To do that, I first perform SOPS (single-scale oriented patches). Conceptually, for each ANMS corner, I first blur the image, and then sample 8x8 pixels from that blurred image with a spacing of s=5 (if the sampled point is outside of the image, then that position is just 0). Then, the samples are normalized. </p>
     
