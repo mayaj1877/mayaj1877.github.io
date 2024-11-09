@@ -123,26 +123,44 @@
 
   <p> For example, using HuggingFace's diffusion model package, we can create images using the prompts: </p>
     <div class="image-row big-row">
-    <p><img src="media/page1.png" /></p>
-    <p><img src="media/page2.png" /></p>
+    <p><img src="num_inference_steps = 20.png" /></p>
     </div>
 
-   <figure>
-    <p> View of Downtown Berkeley from another friend's apartment </p>
+  <p> These images were created using "inference steps" of 20. This means that the image was denoised 20 times. If we increase the number of denoising steps, we get a more "accurate" image (which looks more realistic and less AI-art looking). The drawback of increasing the denoising steps is that it takes longer. </p>
+
+    <div class="image-row big-row">
+    <p><img src="num_inference_steps = 100.png" /></p>
+    </div>
+
+     <figure>
+    <p> The same prompts, but with <b> inference steps = 100 </b> </p>
     </figure>
 
-  </div>
-   
-    <div class="text-with-image-right">
-    <img src="media/zelda1_mops.png" />
+    <div class="image-row big-row">
+    <img src="media/num_inference = 50 step 1, 20 step 2.png" />
     <div>
-        <p> Now that I have good corners of image 1 and image 2, I can match them together. To do that, I first perform SOPS (single-scale oriented patches). Conceptually, for each ANMS corner, I first blur the image, and then sample 8x8 pixels from that blurred image with a spacing of s=5 (if the sampled point is outside of the image, then that position is just 0). Then, the samples are normalized. </p>
-    
-        <p> Then, I get the distance between the samples of both images. For each sample, I get the  nearest neighbor (nn1) and the second nearest neighbor (nn2). Conceptually, if both nearest neighbors are equally as good, we don't want to use either of them -- we only want to take nn1 if nn1 is significantly better than nn2 (Lowe's trick). Therefore, we set a threshold (ex. 0.6) of how much better nn1 has to be compared to nn2. This can be used to match points together: </p>
+
+     <figure>
+    <p> The same prompts, but with <b> inference steps = 50 </b> for step1, and <b> inference steps = 20 </b> for step2. </p>
+    </figure>
+
+    <h4> Samplings </h4>
+
+    <p> Given this real campanile image: </p>
+
+    <div class="image-row mid-row">
+    <p><img src="campanile.jpg" /></p>
     </div>
-</div>
-  
-    
+
+    <p> I perform the forward process, which is given by the equation: </p>
+    <h5> sqrt(alpha) * image + sqrt(1-alpha) * epsilon </h5>
+    <p> Where alpha represents a cumulative product of the amount of noise is removed each time, and epsilon represents a random value picked within a Normal distribution ~N(0, 1). </p>
+
+    <div class="image-row mid-row">
+    <p><img src="media/campanile_250_500_750.png" /></p>
+    </div>
+
+        
 
 </body>
 </html>
