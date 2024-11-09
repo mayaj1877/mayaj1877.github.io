@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 5: Fun with Diffusion Models </title>
+    <style>
+        body {
+            font-family: Georgia, Times New Roman, Arial, sans-serif;
+            margin: 40px;
+            padding: 40px;
+            background-color: #f0f8ff;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 40px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .inline-image-left {
+            float: left; /* or 'right' */
+            margin: 0 15px 15px 0; /* Adds space around the image */
+            width: 300px; /* Optional: Control image size */
+            height: auto;
+        }
+
+        .inline-image-right {
+            float: right;
+            margin: 0 15px 15px 0; /* Adds space around the image */
+            width: 300px; /* Optional: Control image size */
+            height: auto;
+        }
+        
+
+        .image-row {
+            display: flex;
+            justify-content: center; 
+            gap: 0;
+        }
+
+        .image-row img {
+            width: 200px;  
+            height: auto;     
+            object-fit: contain;
+        }
+
+        .big-row img {
+            width: 400px; 
+            height: 400px;    
+            padding: 0;    
+            margin: 0;    
+            border: none;  
+            gap: 5;
+        }
+
+        .mid-row img {
+            width: 200px; 
+            height: 200px;    
+            padding: 0;    
+            margin: 0;    
+            border: none;  
+            gap: 5;
+        }
+
+        .text-with-image {
+            display: flex;
+            align-items: center; /* Aligns image and text vertically */
+            gap: 15px; /* Space between image and text */
+        }
+
+        .text-with-image-left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .text-with-image-left img {
+            width: 300px;
+            height: auto;
+        }
+        
+        .text-with-image-right {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .text-with-image-right img {
+            width: 200px; 
+            height: auto;
+        }
+        
+        
+        .text-with-image img {
+            width: 300px; /* Adjust size */
+            height: auto;
+        }
+        
+        figure {
+            text-align: center;
+        }
+ 
+        .center-text {
+            text-align: center; 
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <h1> Project 5: Fun with Diffusion Models </h1>
+    <h2> by Maya Joiner </h2>
+
+    
+    <h2> Part 5A: The Power of Diffusion Models </h2>
+
+    <p> AI art is becoming more and more common among short-form content, music videos, and of course, art. However, many might not understand how exactly these images are created. In this part of the project, I attempt to create different images and even optical illusions.  </p>
+    <p> It's easy to "destroy" a clear image into white noise -- however, it's hard to reconstruct a real image from white noise. A more easy reconstruction process would be to reverse or undo the process of destroying an image, also known as "denoising" an image. </p>
+
+  <h4> Prelims </h4>
+
+  <p> For example, using HuggingFace's diffusion model package, we can create images using the prompts: </p>
+    <div class="image-row big-row">
+    <p><img src="media/page1.png" /></p>
+    <p><img src="media/page2.png" /></p>
+    </div>
+
+   <figure>
+    <p> View of Downtown Berkeley from another friend's apartment </p>
+    </figure>
+
+  </div>
+   
+    <div class="text-with-image-right">
+    <img src="media/zelda1_mops.png" />
+    <div>
+        <p> Now that I have good corners of image 1 and image 2, I can match them together. To do that, I first perform SOPS (single-scale oriented patches). Conceptually, for each ANMS corner, I first blur the image, and then sample 8x8 pixels from that blurred image with a spacing of s=5 (if the sampled point is outside of the image, then that position is just 0). Then, the samples are normalized. </p>
+    
+        <p> Then, I get the distance between the samples of both images. For each sample, I get the  nearest neighbor (nn1) and the second nearest neighbor (nn2). Conceptually, if both nearest neighbors are equally as good, we don't want to use either of them -- we only want to take nn1 if nn1 is significantly better than nn2 (Lowe's trick). Therefore, we set a threshold (ex. 0.6) of how much better nn1 has to be compared to nn2. This can be used to match points together: </p>
+    </div>
+</div>
+  
+    
+
+</body>
+</html>
