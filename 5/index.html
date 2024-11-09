@@ -148,14 +148,10 @@
 
     <p> I perform the forward process, which is given by the equation: </p>
     <h5> sqrt(alpha) * image + sqrt(1-alpha) * epsilon </h5>
-    <p> Where alpha represents a cumulative product of the amount of noise is removed each time, and epsilon represents a random value picked within a Normal distribution ~N(0, 1). </p>
+    <p> Where alpha represents a cumulative product of the amount of noise is removed each time, and epsilon represents a random value picked within a Normal distribution ~N(0, 1). I can try to blur the image to denoise it, but that doesn't work well. The best kernel size I found was k=7: </p>
 
     <div class="image-row big-row">
     <p><img src="media/campanile_250_500_750.png" /></p>
-    </div>
-
-    <p> I can try to blur the image to denoise it, but that doesn't work well. The best kernel size I found was k=7: </p>
-    <div class="image-row big-row">
     <p><img src="media/1.2_denoised.png" /></p>
     </div>
         
