@@ -154,7 +154,19 @@
     <p><img src="media/campanile_250_500_750.png" /></p>
     <p><img src="media/1.2_denoised.png" /></p>
     </div>
-        
+
+    <p> Therefore, instead of simply blurring, I implement <b> one-step denoising </b>. The idea of one step denoising is that for different time steps, we estimate the amount of noise present in the noisy image. If we then subtract that estimated amount of noise from the noisy image, theoretically we should get a clean image. This works pretty well for small time steps (i.e. images that are not too noisy), but gets progressively worse as the image gets more noisy: </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/1.3.png" /></p>
+    </div>
+
+    <p> To fix this issue, we denoise in many steps, also known as <b> iterative denoising </b>. In the image below, I compare iterative denoising with one-step denoising: </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/1.4-1.png" /></p>
+    <p><img src="media/1.4-2.png" /></p>
+    </div>
 
 </body>
 </html>
