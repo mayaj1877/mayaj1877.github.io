@@ -168,5 +168,28 @@
     <p><img src="media/1.4-2.png" /></p>
     </div>
 
+    <p> These images were generated using i=10, but if I set i to 0, I can denoise random noise to make images based on a prompt (the prompt was "a high quality image"): </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/1.4-pic1.png" /></p>
+    <p><img src="media/1.4-pic2.png" /></p>
+    <p><img src="media/1.4-pic3.png" /></p>
+    <p><img src="media/1.4-pic4.png" /></p>
+    <p><img src="media/1.4-pic5.png" /></p>
+    </div>
+
+    <p> To improve the image quality even more, I use a technique called <b> Classifier-Free Guidance (CFG)</b>. The gist of this technique is that I blend a conditional image estimate (image with a prompt like "a high quality image") with an unconditional image estimate (image with no prompt) to create the final output. </p>
+
+    <p> The equation for blending the two types of images is <b> u + gamma(c-u) </b>, where u is the unconditional noise estimate, c is the conditional noise estimate, and gamma is a constant that represents the strength of the CFG (a higher gamma value means the output will follow the conditional prompt more). </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/1.6-pic1.png" /></p>
+    <p><img src="media/1.6-pic2.png" /></p>
+    <p><img src="media/1.6-pic3.png" /></p>
+    <p><img src="media/1.6-pic4.png" /></p>
+    <p><img src="media/1.6-pic5.png" /></p>
+    </div>
+
+    
 </body>
 </html>
