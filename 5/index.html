@@ -227,7 +227,10 @@
     <p><img src="media/pokemon.png" /></p>
     </div>
 
-    <h3> 1.7.1-1.7.2 </h3>
+    <h3> 1.7.1 </h3>
+
+    <p> This can not only be done on images I own, but can also be performed on images that exist on the internet as well as hand-drawn images. Here, I get an image of a strawberry from the web, and also draw a squid and a bird. </p>
+
     <div class="image-row mid-row">
     <p><img src="media/1.7.1-pic1.png" /></p>
     <p><img src="media/1.7.1-pic2.png" /></p>
@@ -238,11 +241,15 @@
     <p><img src="media/1.7.1-strawberry.jpg" /></p>
     </div>
 
+    <figure> Image of strawberry I found on the web. </figure>
+
     <div class="image-row mid-row">    
     <p><img src="media/1.7.2-squid.png" /></p>
     <p><img src="media/1.7.2-squid-drawing.png" /></p>
     <p><img src="media/1.7.2-processed.png" /></p>    
     </div>
+
+    <figure> I tried to draw a squid (middle photo) based on the photo (left) I found on the web. Because the editing software had a rectangular UI, my image got squashed when cropping it into a square so that I could perform CFG on it (right). </figure>
 
     <div class="image-row mid-row">    
     <p><img src="media/1.7.2-pic1.png" /></p>
@@ -253,11 +260,16 @@
     <p><img src="media/1.7.2-pic6.png" /></p>
     </div>
 
+    <figure> Weird that I get two humans at i=10... </figure>
+
     <div class="image-row mid-row">    
     <p><img src="media/1.7.2.2-bird.jpg" /></p>
     <p><img src="media/1.7.2.2-bird-drawing.png" /></p>
     <p><img src="media/1.7.2.2-bird-processed.png" /></p>    
     </div>
+
+    <figure> I tried to draw my favorite bird (middle photo) based on the photo (left) of the bird I found on the web. </figure>
+    
 
     <div class="image-row mid-row">    
     <p><img src="media/1.7.2.2-pic1.png" /></p>
@@ -268,8 +280,35 @@
     <p><img src="media/1.7.2.2-pic6.png" /></p>
     </div>
 
+    <figure> One funny thing about this sequence is that at i=7 and i=10, I get images of a girl wearing clothes of the same color as the bird. The image only changes into that of a bird at i=20. </figure>
 
+    <h3> 1.7.2 </h3>
+
+    <p> We can also use CFG to perform inpainting. If I have a mask of any shape, I can replace just parts of the test image where the mask is white (equal to 1.0). For example, I define a square mask on the campanile: </p>
+
+    <div class="image-row mid-row">    
+    <p><img src="media/1.7-pic6.png" /></p>
+    <p><img src="media/1.7.3-2.png" /></p>
+    </div>
+
+    <p> As you can see in the right image, just the square part is inpainted, so just the contents of the square are edited/created using CFG. The top of the campanile, when inpainted with a square mask on top, doesn't look like the campanile anymore. I do this with other images too: </p>
+    <div class="image-row mid-row">    
+    <p><img src="media/dog.jpg" /></p>
+    <p><img src="media/masked_doggo2.png"/></p>
+    </div>
+
+    <figure> When putting a square mask on the terrier's face (right), the inpainting makes the dog's face look like a chihuahua. </figure>
+
+    <div class="image-row mid-row">    
+    <p><img src="media/pokemon.png" /></p>
+    <p><img src="media/new_pokemon.png"/></p>
+    </div>
+
+    <figure> This time I use a vertical mask, where the left side is the real image and the right side is inpainted. </figure>
+    
     <h3> 1.7.3 </h3>
+
+    <p> Here, I use <b> text-conditioned translation </b>. For part 1.7.1-1.7.2, I used just the prompt "a high quality image" so there was freedom among what kind of images were generated during each timestep (ex. a photo of a girl generated before the bird image in 1.7.2), but if we instead provide a prompt like "a rocket ship", then we can generate photos that look like the prompt before reaching the final image in the last timestep. Here, you can see that the images during the intermediate timesteps look like a rocket ship before ultimately converging to the image of the campanile: </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.7.3.1-pic1.png" /></p>
     <p><img src="media/1.7.3.1-pic2.png" /></p>
@@ -279,6 +318,7 @@
     <p><img src="media/1.7.3.1-pic6.png" /></p>
     </div>
 
+    <p> I try this on the Pokemon image from before, with the same rocket ship prompt: </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.7.3.2-pic1.png" /></p>
     <p><img src="media/1.7.3.2-pic2.png" /></p>
@@ -288,6 +328,7 @@
     <p><img src="media/1.7.3.2-pic6.png" /></p>
     </div>
 
+    <p> I can also try different prompts, like "a photo of a hipster barista" converging to my dog image: </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.7.3.3-pic1.png" /></p>
     <p><img src="media/1.7.3.3-pic2.png" /></p>
@@ -297,26 +338,35 @@
     <p><img src="media/1.7.3.3-pic6.png" /></p>
     </div>
 
+    <h3> 1.8 </h3>
+
+    <p> I could also use unets to create images anagrams. These are images that look like one thing, but when flipped look like something else. In order to do this, I first generate an image with one prompt using a unet and call that e1. Then. I flip the original image and generate another image with the other prompt using the flipped image. I flip that to get e2. To get the final noise estimate e, I average e1 and e2 and add variance (similar to the CFG step from 1.6). Here, I create an image that looks like an old man (left) but looks like people around a campfire when the image is flipped (right): </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.8-1.png" /></p>
     <p><img src="media/1.8-1-flip.png" /></p>
     </div>
 
+    <p> Here's another example: </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.8-2.png" /></p>
     <p><img src="media/1.8-2-flip.png" /></p>
     </div>
 
+    <p> Now I use other prompts: a snowy mountain village from the right side up, but a skull when flipped: </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.8-3.png" /></p>
     <p><img src="media/1.8-3-flip.png" /></p>
     </div>
 
+    <p> My final example is that of a dog, but a human when flipped: </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.8-4.png" /></p>
     <p><img src="media/1.8-4-flip.png" /></p>
     </div>
 
+    <h3> 1.9 </h3>
+
+    <p> I can also use a similar code sequence to create hybrid images, which are images that look like one thing from close up but look like another thing from far away. The first two images look like a waterfall from up close, but look like a skull from far away. The image in the middle looks like a snowy village from up close, but a rocket ship from far away. The two images on the right look like people at a campfire from up close, but a man from far away. </p>
     <div class="image-row mid-row">    
     <p><img src="media/1.9-1.png" /></p>
     <p><img src="media/1.9-2.png" /></p>
