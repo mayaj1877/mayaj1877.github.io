@@ -1,1 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Project: </title>
+    <title> Final Project: Texture Synthesis and Image Refocusing </title>
+    <style>
+        body {
+            font-family: Georgia, Times New Roman, Arial, sans-serif;
+            margin: 40px;
+            padding: 40px;
+            background-color: #f0f8ff;
+        }
 
+        .container {
+            max-width: 800px;
+            margin: 40px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .inline-image-left {
+            float: left; /* or 'right' */
+            margin: 0 15px 15px 0; /* Adds space around the image */
+            width: 300px; /* Optional: Control image size */
+            height: auto;
+        }
+
+        .inline-image-right {
+            float: right;
+            margin: 0 15px 15px 0; /* Adds space around the image */
+            width: 300px; /* Optional: Control image size */
+            height: auto;
+        }
+        
+
+        .image-row {
+            display: flex;
+            justify-content: center; 
+            gap: 0;
+        }
+
+        .image-row img {
+            width: 200px;  
+            height: auto;     
+            object-fit: contain;
+        }
+
+        .big-row img {
+            width: 400px; 
+            height: 400px;    
+            padding: 0;    
+            margin: 0;    
+            border: none;  
+            gap: 5;
+        }
+
+        .mid-row img {
+            width: 200px; 
+            height: 200px;    
+            padding: 0;    
+            margin: 0;    
+            border: none;  
+            gap: 5;
+        }
+
+        .text-with-image {
+            display: flex;
+            align-items: center; /* Aligns image and text vertically */
+            gap: 15px; /* Space between image and text */
+        }
+
+        .text-with-image-left {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .text-with-image-left img {
+            width: 300px;
+            height: auto;
+        }
+        
+        .text-with-image-right {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .text-with-image-right img {
+            width: 200px; 
+            height: auto;
+        }
+        
+        
+        .text-with-image img {
+            width: 300px; /* Adjust size */
+            height: auto;
+        }
+        
+        figure {
+            text-align: center;
+        }
+ 
+        .center-text {
+            text-align: center; 
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <h1> Final Project: Image Quilting and Image Refocusing </h1>
+    <h2> by Maya Joiner </h2>
+
+    
+    <h2> Part 1: Image Quilting </h2>
+
+    <p> 6.1 -- In this part, I randomly sample images. </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/bricks_small copy.jpg" /></p>
+    <p><img src="media/6.1-quilt_random.png" /></p>
+    </div>
+
+    <p> 6.2 </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/bricks_small copy.jpg" /></p>
+    <p><img src="media/6.2-quilt_simple.png" /></p>
+    </div>
+
+    <figure>
+    <p> CHANGE -- this is a caption </p>
+    </figure>
+  
+    <p> 6.3 </p>
+  
+    <div class="image-row big-row">
+    <p><img src="media/bricks_small copy.jpg" /></p>
+    <p><img src="media/6.3-quilt_cut.png" /></p>
+    </div>
+
+    <div class="image-row big-row">
+    <p><img src="media/confetti_texture copy.png" /></p>
+    <p><img src="media/6.3.1-quilt_cut.png" /></p>
+    </div>
+
+    <div class="image-row big-row">
+    <p><img src="media/grates_small copy.jpg" /></p>
+    <p><img src="media/6.3.2-quilt_cut.png" /></p>
+    </div>
+
+    <p> 6.4 </p>
+  
+    <div class="image-row big-row">
+    <p><img src="media/sketch copy.tiff" /></p>
+    <p><img src="media/feynman copy.tiff" /></p>
+    <p><img src="media/6.4.1-texture_transfer.png" /></p>
+    </div>
+
+    <div class="image-row big-row">
+    <p><img src="media/watercolor_small copy.jpg" /></p>
+    <p><img src="media/bird_small copy.jpg" /></p>
+    <p><img src="media/6.4.2-texture_transfer.png" /></p>
+    </div>
+
+    <div class="image-row big-row">
+    <p><img src="media/toast_square_big copy.jpg" /></p>
+    <p><img src="media/bird_small copy.jpg"" /></p>
+    <p><img src="media/6.4.3-texture_transfer.png" /></p>
+    </div>
+
+    <div class="image-row big-row">
+    <p><img src="media/toast_square_big copy.jpg" /></p>
+    <p><img src="media/feynman copy.tiff" /></p>
+    <p><img src="media/6.4.4-texture_transfer.png" /></p>
+    </div>
+
+   <h4> Bells and Whistles </h4>
+   <p> I use a mask and Laplacian Pyramids from Project 2 to blend the image above into an image of toast, so that it looks like a man inside toast. </p>
+
+   <div class="image-row big-row">
+   <p><img src="media/toast copy.jpg" /></p>
+   <p><img src="media/6.4.4-texture_transfer.png" /></p>
+   <p><img src="media/6.5-bw" /></p>
+   </div>
+
+   <p> <b> Aside: </b> I accidentally blended the images as uint type, I got a funny image that I wanted to share: </p>
+
+   <div class="image-row big-row">
+   <p><img src="media/funny_bread.png" /></p>
+   </div>
+  
+    <h2> Part 2: Image Refocusing </h2>
+
+  
+    <h2> Conclusion </h2>
+    <p> In this project I played around with mosaics. Two key takeaways from this project are that 1) image mosaicing is a little bit more complex than the other topics in past projects because it incorporates morphing and blending at the same time, and 2) auto-stitching and manual stitching each come with tradeoffs where auto-stitching is significantly more efficient and usually more accurate but could fail entirely when the images don't have many corners or have different colors. </p>
+
+
+    
+    
+</body>
+</html>
