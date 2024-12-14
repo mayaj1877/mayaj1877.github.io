@@ -203,7 +203,8 @@
     
     <h2> Part 2: Lightfield Camera </h2>
 
-    <p> 7.1 -- In this part, I average a shifted version of photos to get different camera focuses of an image. </p>
+    <h3> 2.1 </h3>
+    <p> In this part, I average a shifted version of photos to get different camera focuses of an image. The Stanford Light Field Archive website contains a folder of photos of a chessboard on a 17x17 (x, y) grid (labeled by their filename, which is in the form y_x_v_u, where each photo of the chessboard is taken from a slightly different camera position (u, v). Since the grid is 17x17 and the filenames are consistent, I can extract the (u, v) camera position of the center photo at grid position 08, 08 and shift all other photos according to this center photo by doing u-center_u, which I call du and dv. I normalized all photos by dividing du by max(us) - min(us) for both u values and v values, but I also tried just scaling them without dividing, and that worked too (I don't think it matters too much -- it just inflates the alpha values if I divide it, especially if I'm dividing by a large u_value/v_value range). I then multiply du and dv by a scaling factor alpha, which determines how much I want to shift the images before averaging. The average photo without any shift (alpha = 0) is far-sided (i.e. the close objects are out of focus). However, when I multiply by a negative alpha, I get a more near-sided image. </p>
 
     <div class="image-row big-row">
     <p><img src="media/ipart1_0.png" /></p>
@@ -211,7 +212,7 @@
     </div>
 
     <figure>
-    <p> The left shows the average image (alpha=0), while the right gif shows images with varying alpha values. </p>
+    <p> The left shows the average image (alpha=0), while the right gif shows images with varying alpha values (-40 to 10). For the version where I scale the images instead of normalizing (i.e. don't divide), My alpha value range was -0.5 (near sided) to about 0.3 (far sided). </p>
     </figure>
 
     <div class="image-row big-row">
@@ -224,7 +225,8 @@
     <p> I can control the amount of focus to show just the near/far jelly beans (alpha=0 vs 60), while the right gif shows images with varying alpha values. </p>
     </figure>
 
-    <p> 7.2 -- Making a small adjustment to the averaging algorithm -- if I introduce a radius parameter that restricts the number of photos used to just those that are in a certain radius, I can focus different parts of the image and change the aperature: </p>
+    <h3> 2.2 </h3>
+    <p> Making a small adjustment to the averaging algorithm -- if I introduce a radius parameter that restricts the number of photos used to just those that are in a certain radius, I can focus different parts of the image and change the aperature: </p>
 
     <div class="image-row big-row">
     <p><img src="media/part2_0.0.png" /></p>
@@ -246,7 +248,7 @@
     </figure>
   
     <h2> Conclusion </h2>
-    <p> One key takeaway from this project is that playing with focus is relatively simple. I was amazed how I can adjust aperature of photos that are already taken, because I thought only cameras can do that before actually taking the photo.  </p>
+    <p> One key takeaway from this project is that playing with focus is relatively simple. I was amazed how I can adjust the focus of photos that are already taken, because I thought only cameras can do that before actually taking the photo.  </p>
 
     
     
