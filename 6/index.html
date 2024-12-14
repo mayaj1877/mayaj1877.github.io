@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Final Project: </title>
-    <title> Final Project: Texture Synthesis and Image Refocusing </title>
+    <title> CS180 Final Project </title>
+    <title> Final Project: Image Quilting and Image Refocusing </title>
     <style>
         body {
             font-family: Georgia, Times New Roman, Arial, sans-serif;
@@ -193,15 +193,60 @@
 
    <p> <b> Aside: Burnt Bread </b> I accidentally loaded the images as uint type, I got a funny image that I wanted to share. It looks like it could be on a t-shirt. </p>
 
-   <div class="image-row big-row">
+    <div class="image-row big-row">
    <p><img src="media/funny_bread.png" /></p>
    </div>
-  
-    <h2> Part 2: Image Refocusing </h2>
-
-  
+    
     <h2> Conclusion </h2>
     <p> In this project I played around with image quilting. One key takeaway is that the code for transfering texture from one image to another is very similar to that of recreating texture from just one image. </p>
+
+    
+    <h2> Part 2: Lightfield Camera </h2>
+
+    <p> 7.1 -- In this part, I average a shifted version of photos to get different camera focuses of an image. </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/ipart1_0.png" /></p>
+    <p><img src="media/lightfield.gif" /></p>
+    </div>
+
+    <figure>
+    <p> The left shows the average image (alpha=0), while the right gif shows images with varying alpha values. </p>
+    </figure>
+
+    <div class="image-row big-row">
+    <p><img src="media/part1.2_0.png" /></p>
+    <p><img src="media/part1.2_60.png" /></p>
+    <p><img src="media/part1.2_jellybean.gif" /></p>
+    </div>
+
+    <figure>
+    <p> I can control the amount of focus to show just the near/far jelly beans (alpha=0 vs 60), while the right gif shows images with varying alpha values. </p>
+    </figure>
+
+    <p> 7.2 -- Making a small adjustment to the averaging algorithm -- if I introduce a radius parameter that restricts the number of photos used to just those that are in a certain radius, I can focus different parts of the image and change the aperature: </p>
+
+    <div class="image-row big-row">
+    <p><img src="media/part2_0.0.png" /></p>
+    <p><img src="media/part2_1.0.png" /></p>
+    <p><img src="media/part2.gif" /></p>
+    </div>
+
+    <figure>
+    <p> Keeping alpha constant (-30), I changed the radius from 0 (left) to 1 (middle). The gif shows the outer parts of the image get out of focus as the radius increases. </p>
+    </figure>
+
+    <div class="image-row big-row">
+    <p><img src="media/part2.2.gif" /></p>
+    <p><img src="media/part2.3.gif" /></p>
+    </div>
+
+    <figure>
+    <p> The alpha parameter decides which part of the image will become out of focus. Both gifs show the radius progression from 0.0 to 0.6, but for the left gif I used an alpha value of 0 while for the right gif I used a value of 1.  </p>
+    </figure>
+  
+    <h2> Conclusion </h2>
+    <p> One key takeaway from this project is that playing with focus is relatively simple. I was amazed how I can adjust aperature of photos that are already taken, because I thought only cameras can do that before actually taking the photo.  </p>
 
     
     
